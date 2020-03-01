@@ -19,6 +19,6 @@
 ## 2.后端技术栈
 
 1.Spring Boot  
-2.Spring Data + JPA 
+2.Spring Data JPA 
 3.MySQL  
 4.Shiro
