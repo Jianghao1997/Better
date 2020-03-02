@@ -18,7 +18,8 @@
 
 ## 2.后端技术栈
 
-1.Spring Boot  
-2.Spring Data JPA 
-3.MySQL  
-4.Shiro
+1. Spring Boot  
+2. Spring Data JPA 
+3. MySQL  
+4. Shiro
+5. 个人社区论坛项目已经初步上线，欢迎一起交流学习！！ [项目地址](http://47.106.71.232/)
