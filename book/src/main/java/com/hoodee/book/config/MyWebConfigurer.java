@@ -24,9 +24,14 @@ public class MyWebConfigurer implements WebMvcConfigurer {
     }
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry){
-        registry.addInterceptor(getLoginIntercepter()).addPathPatterns("/**").excludePathPatterns("/index.html");
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(getLoginIntercepter())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/index.html")
+                .excludePathPatterns("/api/login")
+                .excludePathPatterns("/api/logout");
     }
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         //所有请求都允许跨域
@@ -35,8 +40,10 @@ public class MyWebConfigurer implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .allowedHeaders("*");
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "d:/Vueworkspace/img/");
     }
+
 }

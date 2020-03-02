@@ -1,7 +1,5 @@
 package com.hoodee.book.result;
 
-import lombok.Data;
-
 /**
  * Package: com.hoodee.book.result
  * Description：
@@ -9,7 +7,6 @@ import lombok.Data;
  * Date:  2020.03.01 15:54
  * Modified By:
  */
-@Data
 public class Result {
     private int code;
     private String message;
@@ -18,6 +15,30 @@ public class Result {
     Result(int code, String message, Object data) {
         this.code = code;
         this.message = message;
+        this.data = data;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
         this.data = data;
     }
 }

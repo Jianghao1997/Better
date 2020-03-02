@@ -1,5 +1,7 @@
 package com.hoodee.book.controller;
 
+import com.alibaba.druid.support.json.JSONUtils;
+import com.alibaba.fastjson.JSONObject;
 import com.hoodee.book.pojo.User;
 import com.hoodee.book.result.Result;
 import com.hoodee.book.result.ResultFactory;
@@ -12,13 +14,12 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Package: com.hoodee.book.controller
@@ -99,4 +100,13 @@ public class LoginController {
 
         return ResultFactory.buildSuccessResult(user);
     }
+    @ResponseBody
+    @GetMapping("api/logout")
+    public Result logout() throws Exception{
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        String message = "成功登出";
+        return ResultFactory.buildSuccessResult(message);
+    }
+
 }
